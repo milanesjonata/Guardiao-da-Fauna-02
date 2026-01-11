@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Início | Guardiões da Fauna{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <section class="hero-section grid-col-span-12">
+        <h2>Juntos Pela Vida Silvestre</h2>
+
+        <img src="{{ url_for('static', filename='imagens/onca.jpg') }}"
+             alt="Onça Pintada"
+             class="card-image">
+
+        <p>
+            A Guardião da Fauna é uma ONG sem fins lucrativos dedicada à preservação
+            dos animais silvestres e de seus habitats naturais.
+        </p>
+
+        <a href="{{ url_for('main.projetos') }}"
+           class="btn btn-secondary btn-lg">
+           Conheça Nossos Projetos
+        </a>
+    </section>
+
+</div>
+{% endblock %}

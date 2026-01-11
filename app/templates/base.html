@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block page_css %}{% endblock %}
+
+    <title>{% block title %}Guardião da Fauna{% endblock %}</title>
+</head>
+<body>
+
+
+
+    <header class="main-header">
+        <input type="checkbox" id="menu-toggle-input" class="menu-toggle-input">
+        <label for="menu-toggle-input" class="menu-toggle-label">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <img src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo do Guardião da Fauna" class="logo">
+
+        <h1>Guardião da Fauna - Proteção e Preservação da Vida Silvestre</h1>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="{{ url_for('main.index') }}" class="btn btn-secondary">Início</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('main.projetos') }}" class="btn btn-secondary">Projetos ▼</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('main.cadastro') }}" class="btn btn-secondary">Cadastro</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="app-content">
+        {% block content %}{% endblock %}
+    </main>
+
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>&copy; Guardião da Fauna. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="{{ url_for('static', filename='js/scripts.min.js') }}"></script>
+
+</body>
+</html>
